@@ -1,0 +1,14 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<div class="container">
+  <h1>Delete</h1>
+  <p>
+    Are You Sure You want to Delete <span style="color: red;">{{item}}</span>
+  </p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" name="delete task" />
+  </form>
+</div>

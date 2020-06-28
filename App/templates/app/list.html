@@ -1,0 +1,26 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<div class="container">
+  <h1>To do</h1>
+
+  <form method="POST" action="/">
+    {% csrf_token %} {{form.title}}
+    <input class="btn btn-info" type="submit" name="create task" />
+  </form>
+  {% for apps in app %}
+  <div>
+    <a class="btn btn-info" href="{% url 'update' apps.id %}">update</a>
+    <a class="btn btn-danger" href="{% url 'delete' apps.id %}">Delete</a>
+    {% if apps.complete == True %}
+    <li ;">
+      <strike>{{apps}}</strike>
+      {% else %}
+      <span class="text-white-50 bg-dark ">{{apps}}</span>
+      {% endif %}
+    </li>
+  </div>
+
+  {% endfor %}
+</div>

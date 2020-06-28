@@ -1,0 +1,11 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<div class="container">
+  <h1>Update Form</h1>
+  <form action="" method="POST">
+    {% csrf_token %} {{form}}
+    <input class="btn btn-info" type="submit" name="update task" />
+  </form>
+</div>
